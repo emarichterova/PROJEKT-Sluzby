@@ -1,0 +1,193 @@
+/* intuitivnější box-sizing pro všechny prvky na stránce */
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FAFAFA;
+    color: #8B8B8B;
+    margin: 0;
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+h1 {
+   margin-top: 40px;
+   font-weight: 500;
+   font-size: 28px;
+   text-align: center;
+   color: #000000;
+}
+
+p {
+    text-align: center;
+    margin: 0;
+}
+
+.box {
+    display: flex;
+    padding: 20px;
+    background-color: white;
+    margin: 40px 20px 0 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px #407BFF1F;
+    font-size: 13px;
+}
+
+.tlacitko {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    padding: 10px 30px;
+    border: 0;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.tlacitko1 {
+    margin-top: 30px;
+}
+
+
+.uvodni-fotka {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.tlacitko1 {
+    background-color: #407BFF;
+}
+
+.tlacitko2 {
+    background-color: #8B8B8B;
+}
+
+h2 {
+    margin-top: 60px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.ikona {
+    margin-right: 25px;
+}
+
+/* !!!!! omezit horní hranicí "and (max-width: 1100px)" */
+
+@media screen and (min-width: 640px) {
+    .tlacitko-kontejner {
+        display: flex;
+        justify-content: center;
+    }
+
+    .tlacitko {
+        margin: 0;
+        margin-top: 30px;
+    }
+
+    .tlacitko1 {
+        margin-right: 20px;
+    }
+
+    .ck-info {
+        display: flex;
+        justify-content: center;
+    }
+
+    .delegati-info {
+        display: flex;
+        justify-content: center;
+    }
+
+    .box {
+        flex-direction: column;
+        flex: 1 1 calc((100% / 3) - 80px);
+        margin-right: 0;
+    }
+
+    .ikona {
+        width: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .info3,
+    .info6 {
+        margin-right: 20px;
+    }
+
+    h2 {
+        margin-top: 80px;
+    }
+
+}
+
+@media screen and (min-width: 1100px) {
+    body {
+        padding: 60px 80px;
+    }
+
+    .uvod {
+        display: flex;
+    }
+
+    .leva-cast-uvodu {
+        order: 1;
+    }
+
+    .prava-cast-uvodu {
+        order: 2;
+    }
+
+    .leva-cast-uvodu h1 {
+        text-align: left;
+    }
+
+    .leva-cast-uvodu p {
+        text-align: left;
+        flex: 0 1 490px;
+    }
+
+    .tlacitko-kontejner {
+        justify-content: left;
+    }
+
+    .uvodni-fotka {
+        max-width: 425px;
+    }
+
+    .sluzby-kancelare {
+        display: flex;
+    }
+
+    .kancelar-text {
+        order: 2;
+    }
+
+    .kancelar-boxy {
+        order: 1;
+    }
+
+
+    .sluzby-delegatu {
+        display: flex;
+    }
+
+    .delegati-text {
+        order: 1;
+    }
+
+    .delegati-boxy {
+        order: 2;
+    }
+
+
+}
