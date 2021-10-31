@@ -32,6 +32,7 @@ p {
     border-radius: 10px;
     box-shadow: 0 4px 6px #407BFF1F;
     font-size: 13px;
+    align-items: center;
 }
 
 .tlacitko {
@@ -80,7 +81,6 @@ h2 {
     margin-right: 25px;
 }
 
-/* !!!!! omezit horní hranicí "and (max-width: 1100px)" */
 
 @media screen and (min-width: 640px) {
     .tlacitko-kontejner {
@@ -107,16 +107,20 @@ h2 {
         justify-content: center;
     }
 
+    /* Zde je trochu nepřesnost. Pokud si najedu v grafickém návrhu na textové pole a změřím si jeho odstup od dolního konce boxu, změřím těch 20px, které tu mám nastavené. Podle mě má ale v tom grafickém návrhu textové pole jeden řádek navíc (= textové pole je výrazně vyšší, než je výška těch 2 řádků textu, co v něm jsou). */
+
     .box {
         flex-direction: column;
         flex: 1 1 calc((100% / 3) - 80px);
         margin-right: 0;
+        padding: 40px 15px 20px 15px;
     }
 
     .ikona {
         width: 50px;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 20px;
     }
 
     .info3,
@@ -124,27 +128,42 @@ h2 {
         margin-right: 20px;
     }
 
-    h2 {
-        margin-top: 80px;
-    }
-
 }
 
 @media screen and (min-width: 1100px) {
     body {
-        padding: 60px 80px;
+        padding: 60px 0px;
     }
 
     .uvod {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .uvod,
+    .sluzby-kancelare,
+    .sluzby-delegatu {
+        width: 1040px;
+        /* justify-content: center; */
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .leva-cast-uvodu {
         order: 1;
+        flex-wrap: wrap;
+        flex-basis: 490px;
+        flex-grow: 0;
+        flex-shrink: 1;
     }
 
     .prava-cast-uvodu {
         order: 2;
+        flex-basis: 490px;
+        flex-grow: 0;
+        flex-shrink: 1;
+        align-items: center;
     }
 
     .leva-cast-uvodu h1 {
@@ -166,28 +185,87 @@ h2 {
 
     .sluzby-kancelare {
         display: flex;
+        margin-bottom: 80px;
+        margin-top: 80px;
+        justify-content: space-between;
     }
 
     .kancelar-text {
         order: 2;
+        flex: 0 1 430px;
+        margin-left: 60px;
+    }
+
+    .kancelar-text h2,
+    .kancelar-text p {
+        text-align: left;
     }
 
     .kancelar-boxy {
         order: 1;
+        flex: 0 1 550px;
     }
-
 
     .sluzby-delegatu {
         display: flex;
+        justify-content: space-between;
     }
 
     .delegati-text {
         order: 1;
+        flex: 0 0 430px;
     }
 
     .delegati-boxy {
         order: 2;
+        flex: 0 1 550px;
     }
 
+    .box {
+        flex-basis: calc((100% / 3) - 40px);
+        padding: 0;
+        padding-top: 40px;
+        margin-top: 0;
+    }
+
+    .box .ikona {
+        align-items: center;
+    }
+
+    .ck-info {
+        flex-basis: 550px;
+    }
+
+    .delegati-text p {
+        text-align: left;
+    }
+
+    .delegati-text h2 {
+        text-align: left;
+    }
+
+    .delegati-info .box {
+        flex-grow: 0;
+    }
+
+    .info1 {
+        margin-left: 0;
+    }
+
+    .info3 {
+        margin-right: 0;
+    }
+
+    .info4 {
+        margin-left: 0;
+    }
+
+    .info6 {
+        margin-right: 0;
+    }
+
+    .box p {
+        margin: 0 15px 40px 15px;
+    }
 
 }
